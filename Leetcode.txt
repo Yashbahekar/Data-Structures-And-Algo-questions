@@ -1,0 +1,20 @@
+ private void Permtns(int nums[],List<List<Integer>> ans,List<Integer> ds,int Mark[]){
+       if(ds.size() == nums.length){
+           ans.add(new ArrayList(ds));
+           return;
+       }
+
+       for(int i=0;i<nums.length;i++){
+        
+        if(Mark[i] != 1){         
+        ds.add(nums[i]);
+        Mark[i] = 1;
+        Permtns(nums,ans,ds,Mark);
+        ds.remove(ds.size()-1);
+        Mark[i] = 0;
+       
+        }
+       }
+    }
+
+// Permutauions
